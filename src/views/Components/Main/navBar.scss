@@ -1,0 +1,46 @@
+.nav-wrapper {
+  height: 4em;
+  position: fixed;
+  top:0;
+  float: top;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  button.btn {
+    color: grey;
+    border: none;
+    cursor: pointer;
+  }
+  button.btn.active {
+    color: black;
+  }
+
+  ul {
+    display: flex;
+    float: right;
+    margin-right: 2em;
+  }
+  li {
+    font-size: small;
+    display: block;
+    margin-left: 2em;
+    margin-top: 2em;
+  }
+  img {
+    height: 100%;
+    float: left;
+  }
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.visible {
+  display: block;
+  margin-top: 5em;
+}
+.not-visible {
+  display: none;
+}
