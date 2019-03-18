@@ -1,80 +1,101 @@
 import React, { Component } from 'react';
-import { Button } from 'react-materialize';
-import './navBar.scss';
+import { SocialIcon } from 'react-social-icons';
+import './Main.scss';
 
 class Main extends Component {
   constructor(props){
     super(props);
     this.state = {
-      activeTab: 'Home'
+      activeTab: 'About'
     };
     this.handleTab = this.handleTab.bind(this);
   }
   NavBar = () => {
     const { activeTab } = this.state;
     return (
-      <nav>
-        <div className="card nav-wrapper">
-          <img src="https://res.cloudinary.com/dbk8ky24f/image/upload/v1552403622/n7rll2yyntjnvhaciyn1.ico" alt="logo" />
-          <ul id="nav-mobile" className="left hide-on-med-and-down">
+      <span>
+        <div className="card nav">
+          <ul>
             <li>
-              <Button
-                className={activeTab === 'Home'?'active':''}
-                onClick={this.handleTab}
-                name="Home"
-              >
-                Home
-              </Button>
+              <img
+                className="profile"
+                src="https://lh6.googleusercontent.com/-gqegbA4lDbw/AAAAAAAAAAI/AAAAAAAAAAc/_ENwek7Tv4U/photo.jpg?sz=100"
+                alt="profile"
+              />
             </li>
+            <hr />
             <li>
-              <Button
-                className={activeTab === 'About'?'active':''}
-                onClick={this.handleTab}
-                name="About"
-              >
-                About
-              </Button>
+              <i className="menu-icon material-icons">
+                account_circle
+              </i>
+              <button type="button" className={activeTab === 'About'? '':'inactive'} name="About" onClick={this.handleTab}> About</button>
             </li>
+            <hr />
             <li>
-              <Button
-                className={activeTab === 'Contacts'?'active':''}
-                onClick={this.handleTab}
-                name="Contacts"
-              >
-                Contacts
-              </Button>
-            </li>
-            <li>
-              <Button
-                className={activeTab === 'Resume'?'active':''}
-                onClick={this.handleTab}
+              <i className="menu-icon material-icons">
+                payment
+              </i>
+              <button
+                type="button"
+                className={activeTab === 'Resume'? '':'inactive'}
                 name="Resume"
-              >
+                onClick={this.handleTab}>
                 Resume
-              </Button>
+              </button>
             </li>
+            <hr />
+            <li>
+              <i className="menu-icon material-icons">
+                email
+              </i>
+              <button type="button" className={activeTab === 'Contact'? '':'inactive'} name="Contact" onClick={this.handleTab}> Contact</button>
+            </li>
+            <hr />
           </ul>
         </div>
-      </nav>
+      </span>
     );
   };
 
-  Home = () => {
-    const { activeTab } = this.state;
-    const className = activeTab  === 'Home'?'visible':'not-visible';
-    return (
-      <div className={className}>
-        this is Home
-      </div>
-    );
-  };
   About = () => {
     const { activeTab } = this.state;
     const className = activeTab  === 'About'?'visible':'not-visible';
     return (
-      <div className={className}>
-        this is About
-      </div>
+      <span className={`card about ${className}`}>
+        <div>
+          <h2 className="title"> KEVIN KIBITOK KOECH</h2>
+        </div>
+        <span className="picture">
+          <img
+            className="profile"
+            src="https://lh6.googleusercontent.com/-gqegbA4lDbw/AAAAAAAAAAI/AAAAAAAAAAc/_ENwek7Tv4U/photo.jpg?sz=400"
+            alt="profile"
+          />
+        </span>
+        <span className="content">
+          <h6 className="software-engineer">About me</h6>
+          <p>I am Kevin Kibitok Koech, a software engineer, Mathematician, problem solver and a team player.</p>
+          <p>
+            I am a mid level web developer majoring in Javascript with Postgres, React, Express.js,
+            Node.js(PREN) as my primary stack. I also have some experience with Python as I have used Flask micro-framework
+            and Django to develop REST APIs.
+          </p>
+          <p>
+            I am a football fan who follows English football and European continental football supporting Arsenal Football Club.
+          </p>
+          <ul>
+            <li>
+              <SocialIcon url="https://twitter.com/KeviKoech?ref_src=twsrc%5Etfw" />
+            </li>
+            <li>
+              <SocialIcon url="https://www.facebook.com/kevinkibitokkoech" />
+            </li>
+            <li>
+              <SocialIcon url="https://www.linkedin.com/in/kevin-koech-47b272116/" />
+            </li>
+          </ul>
+        </span>
+      </span>
     );
   };
 
@@ -83,7 +104,7 @@ class Main extends Component {
     const className = activeTab  === 'Contacts'?'visible':'not-visible';
     return (
       <div className={className}>
-        this is Contacts
+        This is Contacts
       </div>
     );
   };
@@ -92,7 +113,7 @@ class Main extends Component {
     const className = activeTab  === 'Resume'?'visible':'not-visible';
     return (
       <div className={className}>
-        this is Resume
+        This is Resume
       </div>
     );
   };
@@ -101,11 +122,11 @@ class Main extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="body">
         {this.NavBar()}
-        {this.Home()}
-        {this.Contacts()}
-        {this.Resume()}
+        {/*{this.Home()}*/}
+        {/*{this.Contacts()}*/}
+        {/*{this.Resume()}*/}
         {this.About()}
       </div>
     );
