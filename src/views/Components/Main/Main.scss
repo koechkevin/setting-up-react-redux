@@ -45,14 +45,14 @@ img.logo {
 .body {
   background-color: #35b5b1;
   display: flex;
-  height: 100%;
+  height: 100vh;
 }
 .about {
   overflow-y: scroll;
   position: relative;
   margin: 5% 5% 5% 5%;
   width: 80%;
-  height: 890px;
+  height: 70vh;
   .social-icon {
     width: 20px !important;
     height: 20px !important;
@@ -61,22 +61,20 @@ img.logo {
     display: inline;
     margin-right: 5px;
   }
-  .title {
-    color: #eee;
-    font-weight: bolder;
-  }
-  img {
+  .profile {
     border-radius: 4px;
-    margin-left: 2%;
     width: 40%;
     float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
   }
   .software-engineer {
     font-weight: bold;
   }
   .content {
-    display: inline-block;
-    width: 50%;
+    display: inline;
+    width: 55%;
+    margin-left: 4%;
     text-align: left;
     font-family: sans-serif;
   }
@@ -84,6 +82,135 @@ img.logo {
     margin: 1px;
     display: block;
   }
+  .technologies {
+    width: 100%;
+    text-align: left;
+  }
+  .small-bold {
+    font-size: small;
+    font-weight: bold;
+  }
+}
+.contacts {
+  width: 52%;
+  height: 60vh;
+  overflow-y: scroll;
+  position: relative;
+  margin: 10% 10% 10% 20%;
+  overflow-x: scroll;
+  li {
+    display: inline;
+    margin-right: 5px;
+    .social-icon {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+  .contact-head {
+    color: #222;
+    font-family: sans-serif;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    font-size: x-large;
+    border-left: #35b5b1;
+  }
+  .contacts-content {
+    display: inline-flex;
+    text-align: left;
+    width: 100%;
+  }
+  .menu-icon {
+    color: rgb(0, 171, 107);
+    vertical-align: middle;
+    padding: 0.7em;
+  }
+}
+.resume {
+  width: 80%;
+  height: 70vh;
+  overflow-y: scroll;
+  position: relative;
+  margin: 5% 5% 5% 5%;
+  .menu-icon {
+    color: #78cfac;
+    vertical-align: middle;
+  }
+  .subject-school {
+    margin-left: 2em;
+  }
+  .year {
+    background-color:rgb(0, 171, 107);
+    margin-left: 1em;
+    color: white;
+    padding: 0.3em 0.5em 0.3em 1em;
+  }
+  .referee-name {
+    color: #222222;
+    font-size: small;
+    margin-left: 1em;
+  }
+  .resume-head {
+    color: #222;
+    font-family: sans-serif;
+    font-weight: 700;
+    line-height: 1.5em;
+    width: 30%;
+    margin-bottom: 1em;
+    font-size: x-large;
+    border-left: #35b5b1;
+  }
+  .resume-content {
+    display: inline-flex;
+    text-align: left;
+    width: 100%;
+  }
+  .referees{
+    width: 100em;
+  }
+  .experience {
+    width: 100em;
+  }
+  .education {
+    width: 100em;
+  }
+  .subject {
+    font-weight: bold;
+    color: #616161;
+  }
+  .school {
+    font-size: 12px;
+    color: #35b5b1;
+  }
+  .job-description {
+    color: #a5a5a5;
+  }
+}
+.title {
+  color: #eee;
+  font-weight: bolder;
+}
+textarea {
+  border: none;
+  resize: none
+}
+textarea:focus {
+  outline: none ;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom:1px solid #26a699;
+}
+.field {
+  border-bottom: none !important;
+}
+.google-form {
+  margin-right: 1em;
+  max-width: 400px;
+  margin-left: 4em;
+}
+.add-margin {
+  margin: 2%;
 }
 .not-visible {
   display: none;

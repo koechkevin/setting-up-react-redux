@@ -10,6 +10,7 @@
     "eslint-plugin-react": "^7.12.4",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-materialize": "^2.6.0",
