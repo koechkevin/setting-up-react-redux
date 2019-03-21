@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import NavBar from '../views/Components/Main';
+import Main from '../views/Components/Main';
 
 const Routes = () => (
   <Switch>
     <Route
       path="/"
-      exact component={NavBar}
+      exact component={Main}
     />
   </Switch>
 );
