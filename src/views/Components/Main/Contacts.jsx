@@ -27,7 +27,7 @@ class Contacts extends Component {
   render() {
     const { activeTab } = this.props;
     const { name, phone, email, message } = this.state;
-    const isDisabled = (!name.trim() || !((phone).toString().trim().length>10) || !email.trim() || !message.trim())
+    const isDisabled = (!name.trim() || !((phone).toString().trim().length>9) || !email.trim() || !message.trim())
       ?'disabled':'';
     const className = activeTab === 'Contacts' ? 'visible' : 'not-visible';
     return (
