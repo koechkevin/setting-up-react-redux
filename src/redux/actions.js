@@ -1,4 +1,4 @@
-export default (data) => ({
+export default (data, callBack) => ({
   type: 'POST',
-  data
+  data, callBack
 });

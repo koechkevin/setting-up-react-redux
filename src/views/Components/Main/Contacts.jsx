@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {SocialLinks} from './About';
+import './loader.scss';
+import {MobileNavBar} from './NavBar';
 
 class Contacts extends Component {
   constructor(props) {
@@ -8,14 +10,15 @@ class Contacts extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.state = {
-      name:'', phone:'', email:'', message:''
+      name:'', phone:'', email:'', message:'', isLoading: false
     };
   }
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({ isLoading:true });
     const { action } = this.props;
     const { name, phone, email, message } = this.state;
-    action({ name, phone, email, message });
+    action({ name, phone, email, message }, () => this.setState({ isLoading:false }));
     this.setState({
       name:'', phone:'', email:'', message:''
     });
@@ -25,13 +28,15 @@ class Contacts extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
-    const { activeTab } = this.props;
-    const { name, phone, email, message } = this.state;
+    const { activeTab, handleTab } = this.props;
+    const { name, phone, email, message, isLoading } = this.state;
     const isDisabled = (!name.trim() || !((phone).toString().trim().length>9) || !email.trim() || !message.trim())
       ?'disabled':'';
     const className = activeTab === 'Contacts' ? 'visible' : 'not-visible';
     return (
       <div className={`card contacts ${className}`}>
+        <MobileNavBar handleTab={handleTab} activeTab={activeTab} />
+        <span className={`trip-${isLoading?'loading':'not-loading'}`}><div id="trip-loader" /></span>
         <div className="add-margin">
           <div>
             <h2 className="title">Get in Touch</h2>
@@ -119,6 +124,7 @@ class Contacts extends Component {
 }
 Contacts.propTypes = {
   activeTab: PropTypes.string.isRequired,
-  action: PropTypes.func.isRequired
+  action: PropTypes.func.isRequired,
+  handleTab: PropTypes.func.isRequired,
 };
 export default Contacts;

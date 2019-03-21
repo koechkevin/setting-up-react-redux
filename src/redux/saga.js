@@ -10,6 +10,8 @@ function* postMessageSaga(action) {
     toast.success('Your message was sent successfully. Koech will receive an email');
   } catch (error) {
     toast.error('An error occurred while processing your request. please check your entries');
+  } finally {
+    action.callBack();
   }
 }
 

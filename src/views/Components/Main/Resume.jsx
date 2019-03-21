@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {MobileNavBar} from './NavBar';
 
-const Resume = ({ activeTab }) => {
+const Resume = ({ activeTab, handleTab }) => {
   const className = activeTab  === 'Resume'?'visible':'not-visible';
   return (
     <span className={`card resume ${className}`}>
+      <MobileNavBar handleTab={handleTab} activeTab={activeTab} />
       <div className="add-margin">
         <div>
           <h2 className="title">Resume</h2>
@@ -134,7 +136,7 @@ const Resume = ({ activeTab }) => {
                   <i className="material-icons menu-icon">
                   email
                   </i>
-                  <span className="referee-name">Nobert.togom@gmail.com</span>
+                  <span className="referee-name">nobert.togom@gmail.com</span>
                 </div>
                 <div>
                   <i className="material-icons menu-icon">
@@ -173,6 +175,7 @@ const Resume = ({ activeTab }) => {
   );
 };
 Resume.propTypes = {
-  activeTab: PropTypes.string.isRequired
+  activeTab: PropTypes.string.isRequired,
+  handleTab: PropTypes.func.isRequired
 };
 export default Resume;

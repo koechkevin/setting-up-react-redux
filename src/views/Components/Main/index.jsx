@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './Main.scss';
 import './toast.scss';
 import NavBar from './NavBar';
@@ -17,7 +18,7 @@ class Main extends Component {
     this.handleTab = this.handleTab.bind(this);
   }
   handleTab(e) {
-    this.setState({activeTab:e.target.name});
+    this.setState({activeTab:e.target.name||'About'});
   }
   render() {
     const { activeTab } = this.state;
@@ -25,11 +26,14 @@ class Main extends Component {
     return (
       <div className="body">
         <NavBar activeTab={activeTab} handleTab={this.handleTab} />
-        <About activeTab={activeTab} />
-        <Contacts activeTab={activeTab} action={action} />
-        <Resume activeTab={activeTab} />
+        <About activeTab={activeTab} handleTab={this.handleTab} />
+        <Contacts activeTab={activeTab} action={action} handleTab={this.handleTab} />
+        <Resume activeTab={activeTab} handleTab={this.handleTab} />
       </div>
     );
   }
 }
+Main.propTypes = {
+  action: PropTypes.func.isRequired
+};
 export default connect(null, { action })(Main);

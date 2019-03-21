@@ -1,30 +1,36 @@
 import {SocialIcon} from 'react-social-icons';
 import React from 'react';
 import PropTypes from 'prop-types';
+import {MobileNavBar} from './NavBar';
+import _ from '../../../images/whatsapp.svg';
 
 export const SocialLinks = () => {
   return (
     <ul>
-      <li>
+      <li className="popup" data-popuptext="whatsapp">
+        <a href="https://wa.me/254726226149"><img className="image" src={_} alt="whatsapp" /></a>
+      </li>
+      <li className="popup" data-popuptext="twitter">
         <SocialIcon url="https://twitter.com/KeviKoech?ref_src=twsrc%5Etfw" />
       </li>
-      <li>
+      <li className="popup" data-popuptext="facebook">
         <SocialIcon url="https://www.facebook.com/kevinkibitokkoech" />
       </li>
-      <li>
+      <li className="popup" data-popuptext="linkedIn">
         <SocialIcon url="https://www.linkedin.com/in/kevin-koech-47b272116/" />
       </li>
-      <li>
+      <li className="popup" data-popuptext="github">
         <SocialIcon url="https://github.com/koechkevin" />
       </li>
     </ul>
   );
 };
 
-const About = ({ activeTab }) => {
+const About = ({ activeTab, handleTab }) => {
   const className = activeTab  === 'About'?'visible':'not-visible';
   return (
     <span className={`card about ${className}`}>
+      <MobileNavBar handleTab={handleTab} activeTab={activeTab} />
       <div className="add-margin">
         <div>
           <h2 className="title"> KEVIN KIBITOK KOECH</h2>
@@ -107,6 +113,7 @@ const About = ({ activeTab }) => {
   );
 };
 About.propTypes = {
-  activeTab: PropTypes.string.isRequired
+  activeTab: PropTypes.string.isRequired,
+  handleTab: PropTypes.func.isRequired
 };
 export default About;
