@@ -342,3 +342,51 @@ li.popup {
     vertical-align: middle;
   }
 }
+div.card.test {
+  content: '';
+  height: 50px;
+  width: 50%;
+  border: 1px;
+  z-index: 1;
+  box-shadow: none;
+  display: inline-flex;
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    margin-right: -2px;
+  }
+  input:focus {
+    border-bottom: none!important;
+    box-shadow: none!important;
+  }
+  input {
+    border-bottom: none!important;
+  }
+}
+div.card.before {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: -25px;
+  box-shadow: none;
+}
+div.card.after{
+  content: '';
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: -25px;
+  box-shadow: none;
+  .material-icons {
+    border-radius: 50%;
+  }
+}
+.div-main {
+  width: 100%;
+  display: inline-flex;
+  margin-left: 30%;
+  margin-top: 40vh;
+  box-shadow: none;
+}
