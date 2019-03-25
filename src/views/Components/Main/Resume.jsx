@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {MobileNavBar} from './NavBar';
+import cv from '../../../images/cv.pdf';
 
 const Resume = ({ activeTab, handleTab }) => {
   const className = activeTab  === 'Resume'?'visible':'not-visible';
@@ -166,6 +167,7 @@ const Resume = ({ activeTab, handleTab }) => {
                   </i>
                   <span className="referee-name">+254 722 485 180</span>
                 </div>
+                <a href={cv} download="Kevin Koech"><button type="button" className="curriculum-vitae">DOWNLOAD CV</button></a>
               </div>
             </span>
           </span>
