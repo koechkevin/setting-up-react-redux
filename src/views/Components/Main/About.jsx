@@ -76,7 +76,7 @@ const About = ({ activeTab, handleTab }) => {
             <ol>
               <span className="small-bold">Others</span>
               {' - '}
-              <span>HTML, CSS, Version Control(Git)</span>
+              <span>Strong in HTML, CSS, SCSS and Version Control(Git)</span>
             </ol>
           </ul>
         </div>
