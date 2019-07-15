@@ -96,7 +96,14 @@ const About = ({ activeTab, handleTab }) => {
               <span className="small-bold"><a href="https://http://esa.andela.com/">ESA</a></span>
               {' - '}
               <span>
-                {`Andela's product to automate internal activities and communications`}
+                {'Andela\'s product to automate internal activities and communications'}
+              </span>
+            </ol>
+            <ol>
+              <span className="small-bold"><a href="https://lt-task-tracker-staging.herokuapp.com">Task Tracker</a></span>
+              {' - '}
+              <span>
+                {'A product that tracks developer work on project management tools such as Pivotal Tracker board or Kira board'}
               </span>
             </ol>
             <ol>
