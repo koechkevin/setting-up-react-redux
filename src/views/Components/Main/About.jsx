@@ -46,7 +46,7 @@ const About = ({ activeTab, handleTab }) => {
           <h6 className="software-engineer">About me</h6>
           <p>I am Kevin Kibitok Koech, a software engineer, Mathematician, problem solver and a team player.</p>
           <p>
-            I am a full stack web developer majoring in Javascript with Postgres, React, Express.js,
+            I am a full stack web developer majoring in Javascript/Typescript with Postgres, React, Express.js,
             Node.js(PREN) as my primary stack. I also have some experience with Python as I have used Flask micro-framework
             and Django to develop REST APIs.
           </p>
@@ -61,12 +61,12 @@ const About = ({ activeTab, handleTab }) => {
             <ol>
               <span className="small-bold">Programming Languages</span>
               {' - '}
-              <span>JavaScript, Python, Java</span>
+              <span>JavaScript, TypeScript, Python, Java</span>
             </ol>
             <ol>
               <span className="small-bold">Stacks</span>
               {' - '}
-              <span>Node js, React js, Redux js, Express js (PREN), Sequelize js, Python/Django, Python/Flask</span>
+              <span>Node js, React js, Angular 2+, Redux js, Express js (PREN), Sequelize js, Python/Django, Python/Flask</span>
             </ol>
             <ol>
               <span className="small-bold">Databases</span>
@@ -90,6 +90,13 @@ const About = ({ activeTab, handleTab }) => {
                 {`Andela's travel management tool. Manages the life cycle of the travel process from making a
                 request, having it approved, booking a guesthouse in the destination, checking out and other processes.
                 `}
+              </span>
+            </ol>
+            <ol>
+              <span className="small-bold"><a href="https://http://esa.andela.com/">ESA</a></span>
+              {' - '}
+              <span>
+                {`Andela's product to automate internal activities and communications`}
               </span>
             </ol>
             <ol>
